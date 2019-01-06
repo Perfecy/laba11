@@ -1,0 +1,210 @@
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "results"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "results" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "param" varchar, "res" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (20.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171212093414)[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-11-28 12:47:13.422204"], ["updated_at", "2018-11-28 12:47:13.422204"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (10.0ms)[0m  [1m[31mDELETE FROM "results"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-02 16:52:00.506603', '2018-12-02 16:52:00.506603', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-02 16:52:00.506603', '2018-12-02 16:52:00.506603', 298486374)[0m
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CalculatorControllerTest: test_should_get_input
+-----------------------------------------------
+Started GET "/calculator/input" for 127.0.0.1 at 2018-12-02 19:52:04 +0300
+Processing by CalculatorController#input as HTML
+  Rendering calculator/input.html.erb within layouts/application
+  Rendered calculator/input.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 2193ms (Views: 1960.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+CalculatorControllerTest: test_should_get_output
+------------------------------------------------
+Started GET "/calculator/output" for 127.0.0.1 at 2018-12-02 19:52:06 +0300
+Processing by CalculatorController#output as HTML
+  [1m[36mResult Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."param" = ? LIMIT ?[0m  [["param", ""], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (10.0ms)[0m  [1m[31mDELETE FROM "results"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-02 16:54:39.434834', '2018-12-02 16:54:39.434834', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-02 16:54:39.434834', '2018-12-02 16:54:39.434834', 298486374)[0m
+  [1m[35m (20.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CalculatorControllerTest: test_should_get_input
+-----------------------------------------------
+Started GET "/calculator/input" for 127.0.0.1 at 2018-12-02 19:54:44 +0300
+Processing by CalculatorController#input as HTML
+  Rendering calculator/input.html.erb within layouts/application
+  Rendered calculator/input.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 1269ms (Views: 995.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+CalculatorControllerTest: test_should_get_output
+------------------------------------------------
+Started GET "/calculator/output" for 127.0.0.1 at 2018-12-02 19:54:45 +0300
+Processing by CalculatorController#output as HTML
+  [1m[36mResult Load (1.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."param" = ? LIMIT ?[0m  [["param", ""], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (7.6ms)[0m  [1m[31mDELETE FROM "results"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-02 16:57:45.243469', '2018-12-02 16:57:45.243469', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-02 16:57:45.243469', '2018-12-02 16:57:45.243469', 298486374)[0m
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CalculatorControllerTest: test_should_get_input
+-----------------------------------------------
+Started GET "/calculator/input" for 127.0.0.1 at 2018-12-02 19:57:48 +0300
+Processing by CalculatorController#input as HTML
+  Rendering calculator/input.html.erb within layouts/application
+  Rendered calculator/input.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 1601ms (Views: 1237.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+CalculatorControllerTest: test_should_get_output
+------------------------------------------------
+Started GET "/calculator/output" for 127.0.0.1 at 2018-12-02 19:57:50 +0300
+Processing by CalculatorController#output as HTML
+  [1m[36mResult Load (2.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."param" = ? LIMIT ?[0m  [["param", ""], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 2.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (10.0ms)[0m  [1m[31mDELETE FROM "results"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-04 04:56:45.733299', '2018-12-04 04:56:45.733299', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-04 04:56:45.733299', '2018-12-04 04:56:45.733299', 298486374)[0m
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+CalculatorControllerTest: test_should_get_output
+------------------------------------------------
+Started GET "/calculator/output" for 127.0.0.1 at 2018-12-04 07:56:50 +0300
+Processing by CalculatorController#output as HTML
+  [1m[36mResult Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."param" = ? LIMIT ?[0m  [["param", ""], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CalculatorControllerTest: test_should_get_input
+-----------------------------------------------
+Started GET "/calculator/input" for 127.0.0.1 at 2018-12-04 07:56:50 +0300
+Processing by CalculatorController#input as HTML
+  Rendering calculator/input.html.erb within layouts/application
+  Rendered calculator/input.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 1060ms (Views: 869.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+ResultTest: test_should_not_save_new_empty_user
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "results" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-12-04 04:56:51.545280"], ["updated_at", "2018-12-04 04:56:51.545280"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (10.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+ResultTest: test_should_not_save_duplicate_user
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["param", "123 34 5 5 5 25 125 45 54 125 625 5 5 34 5 5 6 345 98 125 25 25 65"], ["res", "[[5, 5, 5, 25, 125], [125, 625, 5, 5], [5, 5], [125, 25, 25]]"], ["created_at", "2018-12-04 04:56:51.555278"], ["updated_at", "2018-12-04 04:56:51.555278"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mResult Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."param" IS NULL AND "results"."res" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "results" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-12-04 04:56:51.565279"], ["updated_at", "2018-12-04 04:56:51.565279"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+ResultTest: test_should_save_new_user
+-------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["param", "123 34 5 5 5 25 125 45 54 125 625 5 5 34 5 5 6 345 98 125 25 25 65"], ["res", "[[5, 5, 5, 25, 125], [125, 625, 5, 5], [5, 5], [125, 25, 25]]"], ["created_at", "2018-12-04 04:56:51.585280"], ["updated_at", "2018-12-04 04:56:51.585280"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (10.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "results"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-07 14:35:22.482638', '2018-12-07 14:35:22.482638', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2018-12-07 14:35:22.482638', '2018-12-07 14:35:22.482638', 298486374)[0m
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+CalculatorControllerTest: test_should_get_output
+------------------------------------------------
+Started GET "/calculator/output" for 127.0.0.1 at 2018-12-07 17:35:24 +0300
+Processing by CalculatorController#output as HTML
+  [1m[36mResult Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."param" = ? LIMIT ?[0m  [["param", ""], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CalculatorControllerTest: test_should_get_input
+-----------------------------------------------
+Started GET "/calculator/input" for 127.0.0.1 at 2018-12-07 17:35:25 +0300
+Processing by CalculatorController#input as HTML
+  Rendering calculator/input.html.erb within layouts/application
+  Rendered calculator/input.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 1559ms (Views: 1394.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+ResultTest: test_should_not_save_new_empty_user
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "results" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-12-07 14:35:26.640450"], ["updated_at", "2018-12-07 14:35:26.640450"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (10.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+ResultTest: test_should_save_new_data
+-------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["param", "123 34 5 5 5 25 125 45 54 125 625 5 5 34 5 5 6 345 98 125 25 25 65"], ["res", "[[5, 5, 5, 25, 125], [125, 625, 5, 5], [5, 5], [125, 25, 25]]"], ["created_at", "2018-12-07 14:35:26.650445"], ["updated_at", "2018-12-07 14:35:26.650445"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+ResultTest: test_should_not_save_duplicate_data
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO "results" ("param", "res", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["param", "123 34 5 5 5 25 125 45 54 125 625 5 5 34 5 5 6 345 98 125 25 25 65"], ["res", "[[5, 5, 5, 25, 125], [125, 625, 5, 5], [5, 5], [125, 25, 25]]"], ["created_at", "2018-12-07 14:35:26.660449"], ["updated_at", "2018-12-07 14:35:26.660449"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mResult Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."param" IS NULL AND "results"."res" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "results" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-12-07 14:35:26.670398"], ["updated_at", "2018-12-07 14:35:26.670398"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (10.0ms)[0m  [1m[31mrollback transaction[0m
