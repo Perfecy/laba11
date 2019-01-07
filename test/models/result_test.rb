@@ -22,14 +22,14 @@ class ResultTest < ActiveSupport::TestCase
     end
   end
 
-
+=end
   test 'value should be unique' do
     test_rec = Result.new param: '1 2 3', res: '1 2 3'
     assert test_rec.save
     test_rec = Result.new param: '1 2 3', res: '1 2 3'
     assert_not test_rec.save
   end
-=end
+
 test 'value should be' do
   test_rec = Result.new param: '1 2 3', res: '1 2 3'
   assert test_rec.save

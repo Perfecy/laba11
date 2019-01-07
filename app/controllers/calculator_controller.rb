@@ -34,7 +34,7 @@ def answer(arg)
 
  resarr
  end
- 
+
   def input
   end
 
@@ -55,4 +55,5 @@ def answer(arg)
   def parse
       @param = params[:param]
   end
+
 end
